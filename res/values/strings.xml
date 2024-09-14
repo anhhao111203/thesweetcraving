@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">E-Commerce App</string>
+    <string name="facebook_app_id">836670504903638</string>
+    <string name="fb_login_protocol_scheme">fb836670504903638</string>
+</resources>
