@@ -2,7 +2,6 @@ package com.example.e_commerceapp.customize_objects
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
@@ -25,7 +24,10 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.e_commerceapp.R
+import com.example.e_commerceapp.ui.theme.LightBlack
+import com.example.e_commerceapp.ui.theme.MainColor
 
 
 @Composable
@@ -45,7 +47,12 @@ fun CustomizeTextField(
             inputText = newInputText
             onChanged(newInputText)
         },
-        placeholder = { Text(text = placeholder) },
+        placeholder = {
+            Text(
+                text = placeholder,
+                color = LightBlack
+            )
+                      },
         trailingIcon = {
             Icon(
                 painter = painterResource(id = trailingIcon),
@@ -53,22 +60,28 @@ fun CustomizeTextField(
             )
         },
         singleLine = true,
-        label = { Text(text = label) },
+        label = { Text(
+            text = label,
+            fontSize = 16.sp
+        ) },
         keyboardOptions = KeyboardOptions.Default.copy(keyboardType = keyboardType),
         visualTransformation = visualTransformation,
         isError = errorState.value,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(bottom = 20.dp),
+            .height(60.dp),
         shape = RoundedCornerShape(1.dp),
         textStyle = TextStyle(
-            fontFamily = FontFamily(Font(R.font.regular_sf))
+            fontFamily = FontFamily(Font(R.font.regular_sf)),
+            fontSize = 18.sp
         ),
         colors = OutlinedTextFieldDefaults.colors(
-            focusedBorderColor = Color(33, 166, 145),
-            focusedLabelColor = Color(33, 166, 145),
-            cursorColor = Color(33, 166, 145),
-            errorBorderColor = Color.Red
+            focusedBorderColor = MainColor,
+            focusedLabelColor = MainColor,
+            cursorColor = MainColor,
+            errorBorderColor = Color.Red,
+            focusedTextColor = LightBlack,
+            unfocusedTextColor = LightBlack
         )
     )
 }

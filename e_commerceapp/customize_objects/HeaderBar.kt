@@ -1,6 +1,7 @@
 package com.example.e_commerceapp.customize_objects
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -18,6 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.e_commerceapp.R
+import com.example.e_commerceapp.ui.theme.LightBlack
 
 @Composable
 fun HeaderBar(
@@ -28,24 +30,23 @@ fun HeaderBar(
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 20.dp),
-        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Start
     ) {
         Icon(
             painter = painterResource(id = R.drawable.previous) ,
             contentDescription = "Previous icon",
             modifier = Modifier
                 .size(40.dp)
-                .weight(0.1f)
                 .clickable { onPreviousClick() },
-            tint = Color.Black
+            tint = LightBlack
         )
-        Text(
-            text = label,
-            fontSize = 18.sp,
-            color = Color(0xFFBEC3C6),
-            modifier = Modifier.weight(0.9f),
-            textAlign = TextAlign.Center,
-            fontFamily = FontFamily(Font(R.font.regular_sf))
-        )
+//        Text(
+//            text = label,
+//            fontSize = 18.sp,
+//            color = LightBlack,
+//            modifier = Modifier.weight(0.9f),
+//            textAlign = TextAlign.Center,
+//            fontFamily = FontFamily(Font(R.font.regular_sf))
+//        )
     }
 }
