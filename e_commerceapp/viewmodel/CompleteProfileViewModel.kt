@@ -15,9 +15,9 @@ class CompleteProfileViewModel: ViewModel() {
         onError: (Exception) -> Unit
     ) {
         val userProfile = hashMapOf(
-            "accountName" to accountName,
-            "phoneNumber" to phoneNumber,
-            "address" to address
+            "userName" to accountName,
+            "userPhone" to phoneNumber,
+            "userAddress" to address,
         )
         firestore.collection("users").document(userID)
             .set(userProfile)
